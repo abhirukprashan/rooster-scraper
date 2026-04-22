@@ -1,13 +1,17 @@
-##[pylyzer] failed /home/abhiruk/python3/main.py 1776836514 942
-.string: Never
+##[pylyzer] failed /home/abhiruk/python3/main.py 1776843275 1287
+.csv: Never
 
 .___v_desugar_1 = pyimport "sync_api"
 .sync_api = pyimport "sync_api"
 .sync_playwright: () -> Never
 .sys: Never
 
-.url_arg: Never
 .main: () -> NoneType
+
+
+
+
+) -> NoneType
 
 
 

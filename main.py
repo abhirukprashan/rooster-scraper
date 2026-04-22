@@ -1,10 +1,9 @@
+import csv
 from playwright.sync_api import sync_playwright
 import sys
 
 
 
-
-    
 
 def main():
     with sync_playwright() as p:
@@ -19,6 +18,11 @@ def main():
         products = page.locator(".job-item")
         count = products.count()
         print(count)
+        with open('jobs.csv', 'w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=['title','link'])
+            writer.writeheader()
+
+ 
         for i in range(count):
             try: 
                 product = products.nth(i)
@@ -27,6 +31,12 @@ def main():
                 link_locator = product.locator(".job-title")
                 href = link_locator.get_attribute("href")
                 full_url = site_rl + href
+                tile_name = title_locator.text_content()
+
+                with open('jobs.csv', 'a', newline='') as f:
+                    writer = csv.DictWriter(f, fieldnames=['title','link'])
+                    
+                    writer.writerow({"title":tile_name,"link":full_url})
                 print(title_locator.text_content())
                 print(full_url)
 
