@@ -12,7 +12,7 @@ def main():
         url_arg = sys.argv[1]
 
         site_rl = "https://rooster.jobs"
-        url = url_arg
+        url = f"https://rooster.jobs/?query={url_arg}&limit=10000&page=1"
         page.goto(url)
         
         products = page.locator(".job-item")
