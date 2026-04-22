@@ -1,0 +1,15 @@
+##[pylyzer] failed /home/abhiruk/python3/main.py 1776761070 708
+.___v_desugar_1 = pyimport "sync_api"
+.sync_api = pyimport "sync_api"
+.sync_playwright: () -> Never
+.main: Never
+
+
+
+
+lencode: Never
+.scrape_amazon_multiple_pages: (keyword: Str := Str, max_pages: Structural({.__add__ = (self: Never, Obj) -> {_: Int}}) := {5} and Structural({.__add__ = (self: Never, Obj) -> {_: Int}})) -> NoneType
+
+
+
+
