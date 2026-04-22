@@ -1,11 +1,19 @@
 from playwright.sync_api import sync_playwright
+import sys
+
+
+
+
+    
 
 def main():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
+        url_arg = sys.argv[1]
+
         site_rl = "https://rooster.jobs"
-        url = "https://rooster.jobs/?query=intern&limit=445&page=1"
+        url = url_arg
         page.goto(url)
         
         products = page.locator(".job-item")
